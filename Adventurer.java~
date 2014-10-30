@@ -7,6 +7,7 @@ public abstract class Adventurer{
     private int STR;
     private int INT;
     private int SA;
+    private int num;
     
     Random rand = new Random();
 
@@ -31,6 +32,14 @@ public abstract class Adventurer{
 
     public void setSTR(int s){
 	STR = s;
+    }
+
+    public void setNum(int n){
+        num = n;
+    }
+
+    public int getNum(){
+        return num;
     }
 
     public void setINT(int i){

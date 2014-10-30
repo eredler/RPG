@@ -34,14 +34,6 @@ public abstract class Adventurer{
 	STR = s;
     }
 
-    public void setNum(int n){
-        num = n;
-    }
-
-    public int getNum(){
-        return num;
-    }
-
     public void setINT(int i){
 	INT = i;
     }
@@ -80,6 +72,15 @@ public abstract class Adventurer{
 
     public int getSA(){
 	return SA;
+    }
+
+    
+    public static void delayGame(int millisec){
+	try {
+	    Thread.sleep(millisec);                
+	} catch(InterruptedException ex) {
+	    Thread.currentThread().interrupt();
+	}
     }
 
     public abstract void attack(Adventurer other);

@@ -34,7 +34,7 @@ public class Rogue extends Adventurer{
     }
 
     public void printStats(){
-	System.out.println("\nRogue " +  getName() + "\t\t" +  getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" +  getSA() + " stamina");
+	System.out.println("\nRogue " +  getName() + "\t\t\t" +  getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" +  getSA() + " stamina");
     }
 
 

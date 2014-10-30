@@ -5,7 +5,7 @@ public class Warrior extends Adventurer{
     Random rand = new Random();
 
     public void printStats(){
-       	System.out.println("\nWarrior " + getName() + "\t\t" + getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" + getSA() + " rage");
+       	System.out.println("\nWarrior " + getName() + "\t\t\t" + getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" + getSA() + " rage");
     }
 
 

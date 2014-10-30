@@ -34,7 +34,7 @@ public class Wizard extends Adventurer{
     }
 
     public void printStats(){
-	System.out.println("\nWizard " + getName() + "\t\t" + getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" + getSA() + " mana");
+	System.out.println("\nWizard " + getName() + "\t\t\t" + getHP() + "HP\t" + getSTR() + "STR\t" + getINT() + "INT\t" + getDEX() + "DEX\t" + getSA() + " mana");
     }
 
 

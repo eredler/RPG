@@ -4,12 +4,12 @@ public class Wizard extends Adventurer{
     Random rand = new Random();
     public Wizard(){
 	super("Tim",20,8,10,12);
-	setSA(25);
+	setSA(15);
     }
 
     public Wizard(String s){
 	super(s,20,8,10,12);
-	setSA(25);
+	setSA(15);
     }
 
 
@@ -25,11 +25,17 @@ public class Wizard extends Adventurer{
 	double attackRate = dexScore + intScore + 50;
 	if (rand.nextInt(101) <= attackRate){
 	    int hit = rand.nextInt(11) + rand.nextInt(2) * strScore / 10;
+	    System.out.println("");
+	    delayGame(500);
 	    System.out.println( this.getName() + " hurls balls of fire at " + other.getName()  + " for " + hit + " damage.\n");
+	    System.out.println("");
 	    other.setHP(other.getHP() - hit);
 	    setSA(getSA() - 5);
 	} else {
+	    System.out.println("");
+	    delayGame(500);
 	    System.out.println( this.getName() + " attempts to hurl balls of fire at  " + other.getName() + " and misses...\n");
+	    System.out.println("");
 	}
     }
 
@@ -45,10 +51,16 @@ public class Wizard extends Adventurer{
 	double attackRate = dexScore + intScore + 50;
 	if (rand.nextInt(101) <= attackRate){
 	    int hit = rand.nextInt(11) + rand.nextInt(2) * strScore / 10;
+	    System.out.println("");
+	    delayGame(500);
 	    System.out.println( this.getName() + " attacks " + other.getName()  + " for " + hit + " damage.\n");
+	    System.out.println("");
 	    other.setHP(other.getHP() - hit);
 	} else {
+	    System.out.println("");
+	    delayGame(500);
 	    System.out.println( this.getName() + " attempts to attack " + other.getName() + " and misses...\n");
+	    System.out.println("");
 	}
     }
 }

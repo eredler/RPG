@@ -54,7 +54,7 @@ public class Game{
     }
 
 
-    public static int chooseStat(int p){
+    public static int chooseStat(int p, boolean second){
 	Scanner userInput = new Scanner(System.in);
 	int d;
 	try{
@@ -64,14 +64,20 @@ public class Game{
 	    delayGame(500);
 	    System.out.println("Invalid number. Try again.");
 	    System.out.println("");
-	    d = chooseStat(p);
+	    d = chooseStat(p,false);
 	}
-	if (d <= 0 || d > (p-1)){
+	if (second == false && (d <= 0 || d > (p-1))){
+	    System.out.println("");
+	    delayGame(500);
+	    System.out.println("Your number must be greater than zero and less than " + p + ". Try again.");
+	    System.out.println("");	    
+	    d = chooseStat(p,false);
+	} else if (second == true && (d <= 0 || d > (p-2))) {
 	    System.out.println("");
 	    delayGame(500);
 	    System.out.println("Your number must be greater than zero and less than " + (p-1) + ". Try again.");
 	    System.out.println("");	    
-	    d = chooseStat(p);
+	    d = chooseStat(p,true);
 	}
 	return d;
     }
@@ -107,15 +113,15 @@ public class Game{
 	}     
 	System.out.println("");
 	delayGame(500);
-	System.out.println("You have " + points + " points.\n\nChoose how many you would like to allocate towards your dexterity.\n\nPlease type a non-negative integer less than " + points + ".");
+	System.out.println("You have " + points + " points.\n\nChoose how many you would like to allocate towards your dexterity.\n\nPlease type a non-negative integer less than " + (points-1) + ".");
 	System.out.println("");
-	Dex = chooseStat(points);
+	Dex = chooseStat(points,true);
 	points -= Dex;
 	System.out.println("");
 	delayGame(500);
 	System.out.println("You have " + points + " points remaining.\n\nChoose how many you would like to allocate towards your strength.\n\nPlease type a non-negative integer less than " + points + ".");
 	System.out.println("");
-	Str = chooseStat(points);
+	Str = chooseStat(points,false);
 	points -= Str;
 	Int = points;
 
@@ -568,9 +574,9 @@ public class Game{
     public static boolean playAgain(String ans){
 	boolean again = false;
 	String x = askAgain();	
-	if (ans.equalsIgnoreCase("Y")) {
+	if (x.equalsIgnoreCase("Y")) {
 	    again = true;
-	} else if (ans.equalsIgnoreCase("N")) {
+	} else if (x.equalsIgnoreCase("N")) {
 	    again = false;
 	} else {
 	    System.out.println("");
